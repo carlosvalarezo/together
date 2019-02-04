@@ -1,24 +1,29 @@
 {
-	"name": "devconnector",
+	"name": "together-social-app",
 	"version": "1.0.0",
-	"description": "Social network for developers",
+	"description": "together is a demo of full stack javascript React Native + Native app",
 	"main": "server.js",
 	"scripts": {
 		"start": "node ./server.js",
-		"server": "node ./node_modules/nodemon/bin/nodemon -L ./server.js"
+		"server": "node ./node_modules/nodemon/bin/nodemon -L ./server.js",
+		"test": "node ./node_modules/.bin/eslint ."
 	},
 	"dependencies": {
 		"express": "^4.16.4",
 		"mongoose": "^5.4.3",
-		"passport": "^0.4.0",
-		"passport-jwt": "^4.0.0",
-		"jsonwebtoken": "^8.4.0",
-		"body-parser": "^1.18.3",
-		"bcryptjs": "^2.4.3",
 		"validator": "^10.10.0",
-		"gravatar": "^1.8.0"
+		"body-parser": "^1.18.3"
 	},
 	"devDependencies": {
-		"nodemon": "^1.18.9"
-	}
+		"nodemon": "^1.18.9",
+		"mocha": "^5.2.0",
+		"chai": "^4.2.0",
+		"sinon": "^7.2.3",
+		"sinon-mongoose": "^2.2.1",
+		"eslint": "^5.13.0",
+		"eslint-config-google": "^0.12.0"
+	},
+	"pre-commit": [
+		"test"
+	  ]
 }

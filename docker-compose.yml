@@ -21,7 +21,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-    - ../together-data/:/data/db/
+    - ./together-data/:/data/db/
     - ./app/scripts/mongo/mongo_healthcheck.sh:/scripts/mongo_healthcheck.sh
     healthcheck:
       test: /scripts/mongo_healthcheck.sh
