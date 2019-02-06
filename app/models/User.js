@@ -8,11 +8,11 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
-        requiered: true
+        required: true
     },
     password: {
         type: String,
-        requiered: true
+        required: true
     },
     dateOfBirth: {
         type: String,
@@ -26,9 +26,9 @@ const UserSchema = new Schema({
     },
     dateofRegistration:{
         type: Date,
-        requiered: true,
+        required: true,
         default: Date.now
     }
 });
 
-module.exports = User = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('users', UserSchema);
