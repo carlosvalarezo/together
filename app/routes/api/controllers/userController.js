@@ -2,9 +2,7 @@ const User = require('../../../models/User');
 
 const userController = {
     userExists: email => {
-        return User.findOne(email)
-            .then(user => user)
-            .catch(error => error);
+        return User.findOne(email);
     },
     createUser: user => {
         const newUser = {
@@ -15,10 +13,11 @@ const userController = {
             nickName: user.nickName,
             avatar: user.avatar
         }
-        return new User(newUser).save()
-                                  .then(writeStatus => writeStatus)
-                                  .catch(error => error);
+        return new User(newUser).save();
 
+    },
+    logginUser: (email, password) => {
+        return User.findOne(email, password);
     }
 }
 
