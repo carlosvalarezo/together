@@ -20,9 +20,12 @@ export default class Login extends Component<Props> {
 
   render() {
     const {navigate} = this.props.navigation;
+    const email = this.props.navigation.getParam('email', '');
+    const password = this.props.navigation.getParam('password', '');
     return (
       <View style={styles.container}>
-        <Text>Profile Screen</Text>
+        <Text>{email}</Text>
+        <Text>{password}</Text>
       </View>
     );
   }
