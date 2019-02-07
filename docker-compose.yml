@@ -5,11 +5,11 @@ services:
     container_name: together-backend
     build:
       context: .
-      dockerfile: ./dockerfiles/dockerfile
+      dockerfile: ./dockerfiles/togetherBackend/dockerfile
     ports:
       - "5000:5000"
     volumes: 
-      - ./app/:/code/
+      - ./togetherBackend/:/code/
       - /code/node_modules/
     depends_on:
       mongo:
@@ -21,9 +21,9 @@ services:
     ports:
       - "27017:27017"
     volumes:
-    - ./together-data/:/data/db/
-    - ./app/scripts/mongo/mongo_healthcheck.sh:/scripts/mongo_healthcheck.sh
+    - ./togetherData/:/data/db/
+    - ./togetherBackend/scripts/mongo/mongo_healthcheck.sh:/scripts/mongo_healthcheck.sh
     healthcheck:
       test: /scripts/mongo_healthcheck.sh
 volumes:
-  app:
+  togetherBackend:
