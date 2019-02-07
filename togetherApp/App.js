@@ -8,9 +8,11 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button } from 'react-native-elements';
+
+import styles from './styles/app';
 
 
 type Props = {};
@@ -22,12 +24,12 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
       <Button
           title="Sign up"
           type="clear"
         />
-      <View/>        
+      <View style={styles.logo}/>        
         <Input
             placeholder='Enter your email'
             leftIcon={
