@@ -1,32 +1,12 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+const RegisterStyles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'white',
     },
-    logo: {
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        backgroundColor: 'green',
-        width:100,
-        height:100
-    },
-    // input: {
-    //   height: 50,
-    //   padding: 4,
-    //   marginRight: 5,
-    //   fontSize: 23,
-    //   // borderWidth: 1,
-    //   // borderColor: 'red',
-    //   // borderTopColor: 'red',
-    //   // borderLeftColor: 'transparent',
-    //   // borderRadius: 8,
-    //   color: 'green'
-    // },
     input: {
       width: 350,
       height: 55,
@@ -52,4 +32,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  module.exports = styles;
+  module.exports = RegisterStyles;

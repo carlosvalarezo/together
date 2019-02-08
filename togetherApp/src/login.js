@@ -5,12 +5,14 @@
  */
 
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button } from 'react-native-elements';
 
 import styles from '../styles/app';
 import loginService from '../src/services/loginService';
+import Keys from '../keys/keys';
+
 
 const checkUser = (email, password) => {
     console.warn({email, password});
@@ -67,7 +69,7 @@ export default class Login extends Component<Props> {
                 const {email, password} = this.state;
                 console.warn({email, password});
 
-                return fetch('http://localhost:5000/api/users/login', {
+                fetch('http://'+Keys.endpoints.localhost+':5000/api/users/login', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -77,8 +79,25 @@ export default class Login extends Component<Props> {
                         email,
                         password,
                     }),
-                }).then(value => console.warn(value))
-                  .catch(error => console.warn(error));
+                }).then(value => {
+                    console.warn(value.ok);
+                    if(value.ok){
+                        return navigate('Profile', {email});
+                    }
+                    Alert.alert(
+                        'Data not valid',
+                        'Would you like to register?',
+                        [
+                          {text: 'Take me to register!', onPress: () => navigate('Register')},
+                          {
+                            text: 'Cancel',
+                            onPress: () => console.warn('Cancel Pressed'),
+                            style: 'cancel',
+                          }
+                        ],
+                        {cancelable: false},
+                      );
+                }).catch(error => console.warn(error));
             }}/>
       </View>
     );

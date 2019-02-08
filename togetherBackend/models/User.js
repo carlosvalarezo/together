@@ -19,10 +19,12 @@ const UserSchema = new Schema({
         required: true
     },
     nickName: {
-        type: String
+        type: String,
+        required: true
     },    
     avatar: {
-        type: String
+        type: String,
+        default: '../../togetherData/assets/profile.png'
     },
     dateofRegistration:{
         type: Date,
