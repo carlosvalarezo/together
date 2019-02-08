@@ -59,8 +59,8 @@ export default class Register extends Component<Props> {
         <Input
             label='Nickname'
             placeholder='Enter a nickname'
-            onChangeText={nickname => this.setState({nickname})}
-            value={this.state.nickname}
+            onChangeText={nickName => this.setState({nickName})}
+            value={this.state.nickName}
             inputStyle={RegisterStyles.input}
           />
         <Avatar
@@ -72,7 +72,7 @@ export default class Register extends Component<Props> {
         <Button title = "Register"
             buttonStyle={RegisterStyles.button}
             onPress={() => {
-                const {name, email, password, dateOfBirth, nickname} = this.state;
+                const {name, email, password, dateOfBirth, nickName} = this.state;
 
                 fetch('http://'+Keys.endpoints.localhost+':5000/api/users/registeruser', {
                     method: 'POST',
@@ -85,7 +85,7 @@ export default class Register extends Component<Props> {
                         email,
                         password,
                         dateOfBirth,
-                        nickname
+                        nickName
 
                     }),
                 }).then(value => console.warn(value))

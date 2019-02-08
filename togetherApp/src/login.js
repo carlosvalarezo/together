@@ -95,7 +95,7 @@ export default class Login extends Component<Props> {
                             style: 'cancel',
                           }
                         ],
-                        {cancelable: false},
+                        {cancelable: true},
                       );
                 }).catch(error => console.warn(error));
             }}/>
