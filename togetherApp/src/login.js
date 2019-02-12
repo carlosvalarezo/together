@@ -32,6 +32,7 @@ export default class Login extends Component<Props> {
       <Button
           title="Sign up"
           type="clear"
+          onPress = {() => navigate('Register')} 
         />
       <View style={styles.logo}/>        
         <Input
@@ -86,9 +87,8 @@ export default class Login extends Component<Props> {
                     }
                     Alert.alert(
                         'Data not valid',
-                        'Would you like to register?',
+                        'Please signup to enjoy together!',
                         [
-                          {text: 'Take me to register!', onPress: () => navigate('Register')},
                           {
                             text: 'Cancel',
                             onPress: () => console.warn('Cancel Pressed'),
