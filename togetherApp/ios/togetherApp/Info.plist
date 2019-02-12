@@ -76,14 +76,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSExceptionDomains</key>
 	<dict>
-		<key>NSExceptionDomains</key>
+		<key>localhost</key>
 		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
+			<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

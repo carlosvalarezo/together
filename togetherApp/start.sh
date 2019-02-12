@@ -3,9 +3,9 @@
 commands=("$@")
 
 for arg in "${commands[@]}"; do
-   if [ "$arg" = "hello_world" ]; then
-      echo "hello world"
+   if [ "$arg" = "run_ios" ]; then
+      react-native run-ios
    else
-      echo "no hello world"
+      echo "command not found"
    fi
 done
