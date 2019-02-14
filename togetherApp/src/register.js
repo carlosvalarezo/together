@@ -11,6 +11,7 @@ import { Input, Button, Avatar } from 'react-native-elements';
 import RegisterStyles from '../styles/register';
 import Keys from '../keys/keys';
 
+
 type Props = {};
 export default class Register extends Component<Props> {
   constructor(props){
@@ -25,11 +26,33 @@ export default class Register extends Component<Props> {
     }
   }
 
+  registerUser(){
+    const {name, email, password, dateOfBirth, nickName} = this.state;
+
+    fetch('http://'+Keys.endpoints.server+'/api/users/registeruser', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name,
+            email,
+            password,
+            dateOfBirth,
+            nickName
+
+        }),
+    }).then(value => console.warn(value))
+      .catch(error => console.warn(error));
+  }
+
   editAvatar(){
     NativeModules.TogetherCamera.greet("lorenxo");
   }
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={RegisterStyles.container}>
         <Input
@@ -72,29 +95,15 @@ export default class Register extends Component<Props> {
                 uri:'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
             }}
             showEditButton
-            onEditPress={() => this.editAvatar()}
+            // onEditPress={() => this.editAvatar()}
+            onEditPress={() => {
+              navigate('TogetherCamera');
+            }}
         />
         <Button title = "Register"
             buttonStyle={RegisterStyles.button}
             onPress={() => {
-                const {name, email, password, dateOfBirth, nickName} = this.state;
-
-                fetch('http://'+Keys.endpoints.localhost+':5000/api/users/registeruser', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        name,
-                        email,
-                        password,
-                        dateOfBirth,
-                        nickName
-
-                    }),
-                }).then(value => console.warn(value))
-                  .catch(error => console.warn(error));
+              console.warn(NativeModules.Greet.greetPeople("lorenxo-el-gato"));
             }}/>
 
       </View>

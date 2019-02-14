@@ -10,6 +10,7 @@ const NavigationStack = createStackNavigator(
       Login: Login,
       Profile: Profile,
       Register: Register,
+      TogetherCamera: TogetherCamera
     },
     {
       initialRouteName: 'Login',

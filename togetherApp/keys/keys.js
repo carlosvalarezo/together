@@ -1,5 +1,5 @@
 module.exports = {
     endpoints: {
-        localhost: 'localhost',
+        server: 'localhost:5000',
     }
 };
