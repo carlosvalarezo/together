@@ -15,8 +15,8 @@ import Foundation
     return true
   }
   
-  @objc func greet() {
-    let greeting = "Hello from swift..."
+  @objc func greet(_ person: String) {
+    let greeting = "Hello " + person + " from swift..."
     print(greeting)
   }
 

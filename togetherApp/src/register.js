@@ -26,7 +26,7 @@ export default class Register extends Component<Props> {
   }
 
   editAvatar(){
-    NativeModules.TogetherCamera.greet();
+    NativeModules.TogetherCamera.greet("lorenxo");
   }
 
   render() {

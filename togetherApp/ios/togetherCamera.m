@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <React/RCTBridgeModule.h>
+#import "React/RCTBridgeModule.h"
 
 @interface RCT_EXTERN_MODULE(TogetherCamera, NSObject)
-  RCT_EXTERN_METHOD(greet)
+RCT_EXTERN_METHOD(greet:(NSString *)person)
 @end
