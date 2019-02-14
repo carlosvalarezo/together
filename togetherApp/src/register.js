@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, NativeModules} from 'react-native';
 import { Input, Button, Avatar } from 'react-native-elements';
 
 import RegisterStyles from '../styles/register';
@@ -23,6 +23,10 @@ export default class Register extends Component<Props> {
         nickName: '',
         avatar: ''
     }
+  }
+
+  editAvatar(){
+    NativeModules.TogetherCamera.greet();
   }
 
   render() {
@@ -68,6 +72,7 @@ export default class Register extends Component<Props> {
                 uri:'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
             }}
             showEditButton
+            onEditPress={() => this.editAvatar()}
         />
         <Button title = "Register"
             buttonStyle={RegisterStyles.button}
