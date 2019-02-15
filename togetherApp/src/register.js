@@ -97,7 +97,7 @@ export default class Register extends Component<Props> {
             showEditButton
             // onEditPress={() => this.editAvatar()}
             onEditPress={() => {
-              navigate('TogetherCamera');
+              navigate('Camera');
             }}
         />
         <Button title = "Register"

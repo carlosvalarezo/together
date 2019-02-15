@@ -1,15 +1,15 @@
 //
-//  TogetherCamera.swift
+//  TogetherCameraViewManager.swift
 //  togetherApp
 //
-//  Created by carlos-valarezo-loaiza on 2/14/19.
+//  Created by carlos-valarezo-loaiza on 2/15/19.
 //  Copyright © 2019 Facebook. All rights reserved.
 //
 
 import Foundation
 
-@objc(TogetherCamera)
-class TogetherCamera: RCTViewManager {
+@objc(TogetherCameraViewManager)
+class TogetherCameraViewManager: RCTViewManager {
   
   override func view() -> UIView! {
     let label = UILabel()
@@ -18,7 +18,7 @@ class TogetherCamera: RCTViewManager {
     return label
   }
   
-  @objc static func requiresMainQueueSetup() -> Bool {
+  override static func requiresMainQueueSetup() -> Bool {
     return true
   }
   
@@ -28,3 +28,4 @@ class TogetherCamera: RCTViewManager {
     return greeting
   }
 }
+
