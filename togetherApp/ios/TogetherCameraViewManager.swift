@@ -1,31 +1,11 @@
-//
-//  TogetherCameraViewManager.swift
-//  togetherApp
-//
-//  Created by carlos-valarezo-loaiza on 2/15/19.
-//  Copyright © 2019 Facebook. All rights reserved.
-//
-
 import Foundation
 
+@available(iOS 11.0, *)
 @objc(TogetherCameraViewManager)
-class TogetherCameraViewManager: RCTViewManager {
+class TogetherCameraViewManager : RCTViewManager {
   
-  override func view() -> UIView! {
-    let label = UILabel()
-    label.text = "Swift ui"
-    label.textAlignment = .center
-    return label
+  override func view() -> UIView {
+    return TogetherCameraView();
   }
   
-  override static func requiresMainQueueSetup() -> Bool {
-    return true
-  }
-  
-  @objc func greet(_ person: String) -> String{
-    let greeting = "Hello " + person + " from swift, togethercamera..."
-    print(greeting)
-    return greeting
-  }
 }
-

@@ -10,5 +10,5 @@
 #import "React/RCTViewManager.h"
 
 
-@interface RCT_EXTERN_MODULE(TogetherCameraViewManager, RCTViewManager)
+@interface RCT_EXTERN_MODULE(TogetherCameraViewManager, UIView)
 @end

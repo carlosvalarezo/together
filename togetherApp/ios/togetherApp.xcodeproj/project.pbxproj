@@ -57,6 +57,7 @@
 		D75E6A9B2216026000D6922D /* Greet.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E6A9A2216026000D6922D /* Greet.m */; };
 		D75E6AA32217518000D6922D /* TogetherCameraViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA22217518000D6922D /* TogetherCameraViewManager.swift */; };
 		D75E6AA5221751A900D6922D /* TogetherCameraViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA4221751A900D6922D /* TogetherCameraViewManager.m */; };
+		D75E6AA7221B5F6A00D6922D /* TogetherCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA6221B5F6A00D6922D /* TogetherCameraView.swift */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		EFCBD97F0A2647F29DDE29E8 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F716DE2667044C55A5C8AB42 /* Zocial.ttf */; };
@@ -411,6 +412,7 @@
 		D75E6A9A2216026000D6922D /* Greet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Greet.m; sourceTree = "<group>"; };
 		D75E6AA22217518000D6922D /* TogetherCameraViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogetherCameraViewManager.swift; sourceTree = "<group>"; };
 		D75E6AA4221751A900D6922D /* TogetherCameraViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogetherCameraViewManager.m; sourceTree = "<group>"; };
+		D75E6AA6221B5F6A00D6922D /* TogetherCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogetherCameraView.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F716DE2667044C55A5C8AB42 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				D75E6AA6221B5F6A00D6922D /* TogetherCameraView.swift */,
 				D75E6AA4221751A900D6922D /* TogetherCameraViewManager.m */,
 				D75E6AA22217518000D6922D /* TogetherCameraViewManager.swift */,
 				D75E6A9A2216026000D6922D /* Greet.m */,
@@ -826,9 +829,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = TE2K4HU5LD;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = TE2K4HU5LD;
 						LastSwiftMigration = 1010;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -1298,6 +1303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75E6A992216024D00D6922D /* Greet.swift in Sources */,
+				D75E6AA7221B5F6A00D6922D /* TogetherCameraView.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				D75E6AA32217518000D6922D /* TogetherCameraViewManager.swift in Sources */,
 				D75E6A9B2216026000D6922D /* Greet.m in Sources */,
@@ -1356,6 +1362,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TE2K4HU5LD;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1390,6 +1397,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = TE2K4HU5LD;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1421,23 +1429,26 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = TE2K4HU5LD;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = togetherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = togetherApp;
 				PRODUCT_NAME = togetherApp;
 				SWIFT_OBJC_BRIDGING_HEADER = "togetherApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1448,22 +1459,25 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TE2K4HU5LD;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = togetherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = togetherApp;
 				PRODUCT_NAME = togetherApp;
 				SWIFT_OBJC_BRIDGING_HEADER = "togetherApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
