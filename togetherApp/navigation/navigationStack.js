@@ -11,7 +11,13 @@ const NavigationStack = createStackNavigator(
       Login: Login,
       Profile: Profile,
       Register: Register,
-      Camera: Camera
+      Camera: {
+        screen: Camera,
+        navigationOptions: {
+          title: '',
+          header: null //this will hide the header
+        },
+      }
     },
     {
       initialRouteName: 'Login',

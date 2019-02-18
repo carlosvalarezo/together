@@ -8,4 +8,9 @@ class TogetherCameraViewManager : RCTViewManager {
     return TogetherCameraView();
   }
   
+  @objc
+  override static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
+  
 }
