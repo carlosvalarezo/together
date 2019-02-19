@@ -24,8 +24,10 @@ export default class Camera extends Component<Props> {
     return (
       <View style={styles.container}>
           <TogetherCamera style={styles.wrapper} onTakePicture={ event => {
-               console.warn(event.nativeEvent.picture);
-              navigate('Register');
+            //   this.setState({avatar: event.nativeEvent.picture});
+            //   const avatar = 'file://' + event.nativeEvent.picture;
+            //   console.warn('avatar volviendo de camara..', avatar);
+              navigate('Register', {avatar: 'file://' + event.nativeEvent.picture});
           }}/>
       </View>
     );

@@ -22,8 +22,14 @@ export default class Register extends Component<Props> {
         password: '',
         dateOfBirth: '',
         nickName: '',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'
+        avatar: this.props.navigation.getParam('avatar', 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'),
     }
+  }
+
+  componentDidMount() {
+      // console.warn(this.props.navigation.getParam('avatar', 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'));
+      this.setState({avatar: this.props.navigation.getParam('avatar', 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg')});
+      console.warn('avatar didmount state...', this.state.avatar);
   }
 
   registerUser(){
@@ -52,8 +58,9 @@ export default class Register extends Component<Props> {
   }
 
   render() {
+    const avatar = this.props.navigation.getParam('avatar', this.state.avatar);
     const {navigate} = this.props.navigation;
-    const {avatar} = this.state;
+    // console.warn('back to register...', this.state.avatar);
     return (
       <View style={RegisterStyles.container}>
         <Input
