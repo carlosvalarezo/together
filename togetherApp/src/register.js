@@ -91,6 +91,7 @@ export default class Register extends Component<Props> {
             inputStyle={RegisterStyles.input}
           />
         <Avatar
+            size="large"
             source={{
                 uri:'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
             }}
@@ -106,7 +107,6 @@ export default class Register extends Component<Props> {
               NativeModules.Greet.getValueFromGreet('lorenxo-el-gato-javascript', value => {
                 console.warn({value});
               });
-              
             }}/>
 
       </View>

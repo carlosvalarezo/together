@@ -17,6 +17,8 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
   var stillImageOutput: AVCapturePhotoOutput!
   var videoPreviewLayer = AVCaptureVideoPreviewLayer()
   
+  @objc var onTakePicture: RCTDirectEventBlock?
+  
   let imageView = UIImageView()
   
   override init(frame: CGRect) {
@@ -70,7 +72,7 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
     button.setTitleColor(UIColor.blue, for: .normal)
     button.frame = CGRect(x: 155, y: 450, width: 200, height: 100)
     self.addSubview(button)
-    button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+    button.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
   }
   
   
@@ -79,10 +81,12 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
     self.addSubview(imageView)    
   }
   
-  @objc func buttonPressed() {
-    print("el boton de la camara...")
+  @objc func takePicture() {
+//    print("el boton de la camara...")
     let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
     stillImageOutput.capturePhoto(with: settings, delegate: self)
+    onTakePicture!(["picture": "hola"])
+    
   }
   
   func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -92,12 +96,14 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
     
     let image = UIImage(data: imageData)
     imageView.image = image
-//    sendPicture(image!)
+    if onTakePicture != nil{
+      onTakePicture!(["picture": image as Any])
+    }
     
   }
   
-  @objc func sendPicture(_ picture: UIImage) -> UIImage{
-    return picture
+  @objc func onEnd(_ callback: RCTResponseSenderBlock){
+    callback([imageView.image!])
   }
   
   

@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "React/RCTViewManager.h"
+#import <React/RCTViewManager.h>
+#import <React/RCTEventEmitter.h>
+
 
 
 @interface RCT_EXTERN_MODULE(TogetherCameraViewManager, UIView)
-RCT_EXTERN_METHOD(sendPicture:(UIImage *)picture -> (UIImage *)picture)
+RCT_EXPORT_VIEW_PROPERTY(onTakePicture, RCTDirectEventBlock)
+RCT_EXTERN_METHOD(getPicture:(RCTResponseSenderBlock) callback)
 @end

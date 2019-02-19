@@ -15,7 +15,7 @@ const NavigationStack = createStackNavigator(
         screen: Camera,
         navigationOptions: {
           title: '',
-          header: null //this will hide the header
+          header: null
         },
       }
     },
