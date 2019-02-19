@@ -22,7 +22,7 @@ export default class Register extends Component<Props> {
         password: '',
         dateOfBirth: '',
         nickName: '',
-        avatar: ''
+        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'
     }
   }
 
@@ -53,6 +53,7 @@ export default class Register extends Component<Props> {
 
   render() {
     const {navigate} = this.props.navigation;
+    const {avatar} = this.state;
     return (
       <View style={RegisterStyles.container}>
         <Input
@@ -93,7 +94,7 @@ export default class Register extends Component<Props> {
         <Avatar
             size="large"
             source={{
-                uri:'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+                uri:avatar,
             }}
             showEditButton
             // onEditPress={() => this.editAvatar()}

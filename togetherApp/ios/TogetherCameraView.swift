@@ -85,29 +85,48 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
 //    print("el boton de la camara...")
     let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
     stillImageOutput.capturePhoto(with: settings, delegate: self)
-    onTakePicture!(["picture": "hola"])
+//    onTakePicture!(["picture": "hola"])
     
   }
   
   func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
     
+    let imageName = "profilePicture.png"
     guard let imageData = photo.fileDataRepresentation()
       else { return }
     
     let image = UIImage(data: imageData)
     imageView.image = image
+    
+    let urlPicture = saveImage(imageName)
+
     if onTakePicture != nil{
-      onTakePicture!(["picture": image as Any])
-    }
+      onTakePicture!(["picture":urlPicture])
+    }    
+  }
+  
+  func saveImage(_ imageName: String) -> String{
+    //create an instance of the FileManager
+    let fileManager = FileManager.default
+    
+    //get the image path
+    let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+    
+    //get the image we took with camera
+    let image = imageView.image!
+    
+    //get the PNG data for this image
+    let data = image.pngData()
+    
+    //store it in the document directory
+    
+    fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+    print("path of profilepicture...", imagePath)
+    
+    return imagePath
     
   }
-  
-  @objc func onEnd(_ callback: RCTResponseSenderBlock){
-    callback([imageView.image!])
-  }
-  
-  
-  
+    
   @objc func greet(_ person: String) -> String{
     let greeting = "Hello " + person + " from swift, togethercamera..."
     print(greeting)
