@@ -15,9 +15,13 @@ class Greet: NSObject {
     return true
   }
   
-  @objc func greetPeople(_ person: String) -> String{
+  func greetPeople(_ person: String) -> String{
     let greeting = "Hello " + person + " from swift..."
     print(greeting)
     return greeting
+  }
+  
+  @objc func getValueFromGreet(_ callback: RCTResponseSenderBlock){
+    callback([greetPeople("lorenxo from swift")])
   }
 }

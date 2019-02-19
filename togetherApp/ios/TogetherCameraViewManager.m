@@ -11,4 +11,5 @@
 
 
 @interface RCT_EXTERN_MODULE(TogetherCameraViewManager, UIView)
+RCT_EXTERN_METHOD(sendPicture:(UIImage *)picture -> (UIImage *)picture)
 @end

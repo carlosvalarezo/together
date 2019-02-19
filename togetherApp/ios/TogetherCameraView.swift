@@ -19,20 +19,15 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
   
   let imageView = UIImageView()
   
-  
-  
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     
     let windowFrame : CGRect = CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
     let cameraView : UIView = UIView(frame: windowFrame)
     self.addSubview(cameraView)
+    
     createButton()
     createPicturePreview()
-    
-//    self.addSubview(createButton())
-
     
     captureSession = AVCaptureSession()
     captureSession.sessionPreset = .medium
@@ -80,10 +75,8 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
   
   
   func createPicturePreview () {
-    
     imageView.frame = CGRect(x: 355, y: 450, width: 200, height: 100)
-    self.addSubview(imageView)
-    
+    self.addSubview(imageView)    
   }
   
   @objc func buttonPressed() {
@@ -99,7 +92,14 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
     
     let image = UIImage(data: imageData)
     imageView.image = image
+//    sendPicture(image!)
+    
   }
+  
+  @objc func sendPicture(_ picture: UIImage) -> UIImage{
+    return picture
+  }
+  
   
   
   @objc func greet(_ person: String) -> String{

@@ -103,7 +103,10 @@ export default class Register extends Component<Props> {
         <Button title = "Register"
             buttonStyle={RegisterStyles.button}
             onPress={() => {
-              console.warn(NativeModules.Greet.greetPeople("lorenxo-el-gato"));
+              NativeModules.Greet.getValueFromGreet(value => {
+                console.warn({value});
+              });
+              
             }}/>
 
       </View>
