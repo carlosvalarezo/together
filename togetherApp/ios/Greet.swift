@@ -21,7 +21,7 @@ class Greet: NSObject {
     return greeting
   }
   
-  @objc func getValueFromGreet(_ callback: RCTResponseSenderBlock){
-    callback([greetPeople("lorenxo from swift")])
+  @objc func getValueFromGreet(_ person: String, callback callback: RCTResponseSenderBlock){
+    callback([greetPeople(person)])
   }
 }

@@ -10,5 +10,5 @@
 #import "React/RCTBridgeModule.h"
 
 @interface RCT_EXTERN_MODULE(Greet, NSObject)
-RCT_EXTERN_METHOD(getValueFromGreet: (RCTResponseSenderBlock)callback)
+RCT_EXTERN_METHOD(getValueFromGreet: (NSString*)person callback:(RCTResponseSenderBlock)callback)
 @end
