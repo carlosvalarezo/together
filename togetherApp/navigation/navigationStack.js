@@ -8,15 +8,33 @@ import { createStackNavigator } from 'react-navigation';
 
 const NavigationStack = createStackNavigator(
     {
-      Login: Login,
-      Profile: Profile,
-      Register: Register,
+      Login: {
+        screen: Login,
+        navigationOptions: {
+          title: '',
+          header: null
+        }
+      },
+      Profile: {
+        screen: Profile,
+        navigationOptions: {
+          title: '',
+          header: null
+        }
+      },
+      Register:{
+        screen: Register,
+        navigationOptions: {
+          title: '',
+          header: null
+        }
+      },
       Camera: {
         screen: Camera,
         navigationOptions: {
           title: '',
           header: null
-        },
+        }
       }
     },
     {

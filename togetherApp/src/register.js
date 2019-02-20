@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import {View, Text, NativeModules} from 'react-native';
+import {View, Text, NativeModules, Platform} from 'react-native';
 import { Input, Button, Avatar } from 'react-native-elements';
 
 import RegisterStyles from '../styles/register';
@@ -33,8 +33,9 @@ export default class Register extends Component<Props> {
   }
 
   registerUser(){
-    const {name, email, password, dateOfBirth, nickName} = this.state;
-
+    const {name, email, password, dateOfBirth, nickName, avatar} = this.state;
+    const {navigate} = this.props.navigation;
+    
     fetch('http://'+Keys.endpoints.server+'/api/users/registeruser', {
         method: 'POST',
         headers: {
@@ -46,21 +47,19 @@ export default class Register extends Component<Props> {
             email,
             password,
             dateOfBirth,
-            nickName
-
+            nickName,
+            avatar
         }),
-    }).then(value => console.warn(value))
-      .catch(error => console.warn(error));
-  }
-
-  editAvatar(){
-    NativeModules.TogetherCamera.greet("lorenxo");
+    }).then(value => {
+      console.warn(value);
+      navigate('Profile');
+    }).catch(error => console.warn(error));
   }
 
   render() {
     const avatar = this.props.navigation.getParam('avatar', this.state.avatar);
     const {navigate} = this.props.navigation;
-    // console.warn('back to register...', this.state.avatar);
+    // console.warn('back to register...', avatar);
     return (
       <View style={RegisterStyles.container}>
         <Input
@@ -112,9 +111,10 @@ export default class Register extends Component<Props> {
         <Button title = "Register"
             buttonStyle={RegisterStyles.button}
             onPress={() => {
-              NativeModules.Greet.getValueFromGreet('lorenxo-el-gato-javascript', value => {
-                console.warn({value});
-              });
+              // NativeModules.TogetherApi.registerUser('lorenxo-el-gato-javascript', value => {
+              //   console.warn({value});
+              // });
+              this.registerUser();
             }}/>
 
       </View>

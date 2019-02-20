@@ -7,7 +7,7 @@
 import React, {Component} from 'react';
 import {View, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input, Button } from 'react-native-elements';
+import { Input, Button, Image } from 'react-native-elements';
 
 import styles from '../styles/app';
 import loginService from '../src/services/loginService';
@@ -34,7 +34,12 @@ export default class Login extends Component<Props> {
           type="clear"
           onPress = {() => navigate('Register')} 
         />
-      <View style={styles.logo}/>        
+      <View style={styles.logo}>
+      <Image
+            source={require('../assets/togetherLogo.png')}
+            style={{width: 50, height: 50}}
+          />
+      </View>        
         <Input
             placeholder='Enter your email'
             leftIcon={
@@ -70,7 +75,7 @@ export default class Login extends Component<Props> {
                 const {email, password} = this.state;
                 console.warn({email, password});
 
-                fetch('http://'+Keys.endpoints.localhost+':5000/api/users/login', {
+                fetch('http://'+Keys.endpoints.server+'/api/users/login', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

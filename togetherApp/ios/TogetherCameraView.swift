@@ -68,9 +68,9 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
   
   func createButton () {
     let button = UIButton();
-    button.setTitle("Take picture", for: .normal)
-    button.setTitleColor(UIColor.blue, for: .normal)
-    button.frame = CGRect(x: 155, y: 450, width: 200, height: 100)
+    let imageButton = UIImage(named: "giphy.png")
+    button.setBackgroundImage(imageButton, for: UIControl.State.normal)
+    button.frame = CGRect(x: 350, y: 750, width: 100, height: 100)
     self.addSubview(button)
     button.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
   }
@@ -102,7 +102,7 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
 
     if onTakePicture != nil{
       onTakePicture!(["picture":urlPicture])
-    }    
+    }
   }
   
   func saveImage(_ imageName: String) -> String{
@@ -124,6 +124,12 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
     print("path of profilepicture...", imagePath)
     
     return imagePath
+    
+  }
+  
+  override func didMoveToSuperview(){
+    super.didMoveToSuperview()
+//    captureSession.stopRunning()
     
   }
     

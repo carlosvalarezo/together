@@ -58,6 +58,8 @@
 		D75E6AA32217518000D6922D /* TogetherCameraViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA22217518000D6922D /* TogetherCameraViewManager.swift */; };
 		D75E6AA5221751A900D6922D /* TogetherCameraViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA4221751A900D6922D /* TogetherCameraViewManager.m */; };
 		D75E6AA7221B5F6A00D6922D /* TogetherCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA6221B5F6A00D6922D /* TogetherCameraView.swift */; };
+		D75E6AA9221CC4C900D6922D /* TogetherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AA8221CC4C900D6922D /* TogetherApi.swift */; };
+		D75E6AAB221CC4E000D6922D /* TogetherApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E6AAA221CC4E000D6922D /* TogetherApi.m */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		EFCBD97F0A2647F29DDE29E8 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F716DE2667044C55A5C8AB42 /* Zocial.ttf */; };
@@ -413,6 +415,8 @@
 		D75E6AA22217518000D6922D /* TogetherCameraViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogetherCameraViewManager.swift; sourceTree = "<group>"; };
 		D75E6AA4221751A900D6922D /* TogetherCameraViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogetherCameraViewManager.m; sourceTree = "<group>"; };
 		D75E6AA6221B5F6A00D6922D /* TogetherCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogetherCameraView.swift; sourceTree = "<group>"; };
+		D75E6AA8221CC4C900D6922D /* TogetherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogetherApi.swift; sourceTree = "<group>"; };
+		D75E6AAA221CC4E000D6922D /* TogetherApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogetherApi.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F716DE2667044C55A5C8AB42 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -677,6 +681,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				D75E6AAA221CC4E000D6922D /* TogetherApi.m */,
+				D75E6AA8221CC4C900D6922D /* TogetherApi.swift */,
 				D75E6AA6221B5F6A00D6922D /* TogetherCameraView.swift */,
 				D75E6AA4221751A900D6922D /* TogetherCameraViewManager.m */,
 				D75E6AA22217518000D6922D /* TogetherCameraViewManager.swift */,
@@ -1302,12 +1308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75E6AA9221CC4C900D6922D /* TogetherApi.swift in Sources */,
 				D75E6A992216024D00D6922D /* Greet.swift in Sources */,
 				D75E6AA7221B5F6A00D6922D /* TogetherCameraView.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				D75E6AA32217518000D6922D /* TogetherCameraViewManager.swift in Sources */,
 				D75E6A9B2216026000D6922D /* Greet.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				D75E6AAB221CC4E000D6922D /* TogetherApi.m in Sources */,
 				D75E6AA5221751A900D6922D /* TogetherCameraViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
