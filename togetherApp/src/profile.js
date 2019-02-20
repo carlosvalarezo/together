@@ -6,10 +6,9 @@
 
 import React, {Component} from 'react';
 import {View, Text, Image} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input, Button } from 'react-native-elements';
+import { Avatar, Button } from 'react-native-elements';
 
-import styles from '../styles/app';
+import styles from '../styles/profile';
 
 type Props = {};
 export default class Profile extends Component<Props> {
@@ -19,17 +18,22 @@ export default class Profile extends Component<Props> {
   }
 
   render() {
+    const parameter = this.props.navigation.getParam('userRegistered') || null;
+    const name = parameter ? JSON.parse(parameter._bodyText).name : this.props.navigation.getParam('name');
+    const avatar = parameter ? JSON.parse(parameter._bodyText).avatar : this.props.navigation.getParam('avatar');
     const {navigate} = this.props.navigation;
-    const parameter = this.props.navigation.getParam('value');
-    const email = parameter.email;
-    const name =  parameter.name;
-    const avatar =  parameter.avatar;
     return (
       <View style={styles.container}>
-        <Image></Image>
-        <Text>{email}</Text>
-        <Text>{name}</Text>
-        <Text>{avatar}</Text>
+        <Button title = "Logout"
+              buttonStyle={styles.button}
+              onPress={() => {
+                navigate('Login');
+        }}/>
+
+        <View style={styles.top}>
+          <Avatar rounded size="xlarge" source={{uri:avatar}}/>
+          <Text style={styles.text}>{name}</Text>
+        </View>
       </View>
     );
   }

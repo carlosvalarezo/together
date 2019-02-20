@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import {View, Text, NativeModules, Platform} from 'react-native';
+import {View, Text, NativeModules, Image} from 'react-native';
 import { Input, Button, Avatar } from 'react-native-elements';
 
 import RegisterStyles from '../styles/register';
@@ -26,12 +26,6 @@ export default class Register extends Component<Props> {
     }
   }
 
-  componentDidMount() {
-      // console.warn(this.props.navigation.getParam('avatar', 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'));
-      this.setState({avatar: this.props.navigation.getParam('avatar', 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg')});
-      console.warn('avatar didmount state...', this.state.avatar);
-  }
-
   registerUser(avatar){
     const {name, email, password, dateOfBirth, nickName} = this.state;
     const {navigate} = this.props.navigation;
@@ -49,18 +43,17 @@ export default class Register extends Component<Props> {
             nickName,
             avatar,
         }),
-    }).then(value => {
-      console.warn('registrando usuario...', value);
-      // navigate('Profile', {value});
+    }).then(userRegistered => {
+      navigate('Profile', {userRegistered});
     }).catch(error => console.warn(error));
   }
 
   render() {
     const avatar = this.props.navigation.getParam('avatar', this.state.avatar);
     const {navigate} = this.props.navigation;
-    // console.warn('back to register...', avatar);
     return (
       <View style={RegisterStyles.container}>
+        <Image source={require('../assets/togetherLogo.png')} style={{width: 250, height: 250}}></Image>
         <Input
             label='Name'
             placeholder='Enter your name'
@@ -80,6 +73,7 @@ export default class Register extends Component<Props> {
             placeholder='Enter a password'
             onChangeText={password => this.setState({password})}
             value={this.state.password}
+            secureTextEntry={true}
             inputStyle={RegisterStyles.input}
           />
         <Input
@@ -102,7 +96,6 @@ export default class Register extends Component<Props> {
                 uri:avatar,
             }}
             showEditButton
-            // onEditPress={() => this.editAvatar()}
             onEditPress={() => {
               navigate('Camera');
             }}

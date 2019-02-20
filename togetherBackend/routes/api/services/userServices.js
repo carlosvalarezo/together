@@ -3,25 +3,8 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const userMessages = require('../middleware/userMessages');
 
-// cosa = async (response) => {
-//     const user = await userController.userExists({email});
-
-//     // if (user && user.enabled) {
-//     //     return true
-//     // }
-//     // return false
-//     if(!userExists){
-//         const userCreated = userController.createUser(request.body);
-//         if(userCreated){
-//             return response.status(200).json(userMessages.userCreatedSucessfully());
-//         }            
-//     }
-//     return response.status(404).json(userMessages.userAlreadyExists());
-// }
-
 router.post('/registeruser', (request, response) => {
     const email = request.body.email;
-    // cosa(response);
     const userExists = userController.userExists({email});
     
     const validUser = userExists.then(result => {
@@ -35,7 +18,8 @@ router.post('/registeruser', (request, response) => {
     }).catch(error => response.status(400).json({error}));
 
     validUser.then(result => {
-        response.status(200).json({result});
+        const {name, avatar} = result;
+        return response.status(200).json({name, avatar});
     }).catch(error => response.status(400).json({error}));
 });
 
@@ -53,5 +37,6 @@ router.post('/login', (request, response) => {
         return response.status(404).json(userMessages.userNotFound());
     }).catch(error => response.status(400).json({error}));
 });
+
 
 module.exports = router;

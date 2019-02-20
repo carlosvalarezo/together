@@ -20,7 +20,6 @@ export default class Camera extends Component<Props> {
 
   render() {
     const {navigate} = this.props.navigation;
-    // const email = this.props.navigation.getParam('email', '');
     return (
       <View style={styles.container}>
           <TogetherCamera style={styles.wrapper} onTakePicture={ event => {

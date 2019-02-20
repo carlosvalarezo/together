@@ -10,19 +10,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button, Image } from 'react-native-elements';
 
 import styles from '../styles/app';
-import loginService from '../src/services/loginService';
 import Keys from '../keys/keys';
 
-
-const checkUser = (email, password) => {
-    console.warn({email, password});
-}
 
 type Props = {};
 export default class Login extends Component<Props> {
   constructor(props){
     super(props);
-    this.state = {email: '', password: ''}
+    this.state = {email: '', password: '', name: '', avatar: ''}
   }
 
   render() {
@@ -73,8 +68,7 @@ export default class Login extends Component<Props> {
             buttonStyle={styles.button}
             onPress={() => {
                 const {email, password} = this.state;
-                console.warn({email, password});
-
+                
                 fetch('http://'+Keys.endpoints.server+'/api/users/login', {
                     method: 'POST',
                     headers: {
@@ -86,9 +80,10 @@ export default class Login extends Component<Props> {
                         password,
                     }),
                 }).then(value => {
-                    console.warn(value.ok);
+                  const name = JSON.parse(value._bodyText).result.name;
+                  const avatar = JSON.parse(value._bodyText).result.avatar;
                     if(value.ok){
-                        return navigate('Profile', {email});
+                        return navigate('Profile', {name, avatar});
                     }
                     Alert.alert(
                         'Data not valid',
