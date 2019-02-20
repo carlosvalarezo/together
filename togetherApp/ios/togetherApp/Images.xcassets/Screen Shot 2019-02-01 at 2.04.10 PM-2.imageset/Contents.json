@@ -1,6 +1,10 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
       "resizing" : {
         "mode" : "3-part-horizontal",
         "center" : {
@@ -8,16 +12,12 @@
           "width" : 1
         },
         "cap-insets" : {
-          "right" : 259,
-          "left" : 258
+          "right" : 130,
+          "left" : 129
         }
       },
       "idiom" : "universal",
-      "filename" : "Screen Shot 2019-02-01 at 2.04.15 PM.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
+      "filename" : "Screen Shot 2019-02-01 at 2.04.10 PM.png",
       "scale" : "2x"
     },
     {

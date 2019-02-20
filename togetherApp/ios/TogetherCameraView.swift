@@ -62,7 +62,7 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
   
   func getDevice() -> AVCaptureDeviceInput {
     let cameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera,
-                                               for: .video, position: .front)
+                                               for: .video , position: .front)
     return try! AVCaptureDeviceInput(device: cameraDevice!)
   }
   

@@ -20,9 +20,10 @@ export default class Profile extends Component<Props> {
 
   render() {
     const {navigate} = this.props.navigation;
-    const email = this.props.navigation.getParam('email', '');
-    const name =  this.props.navigation.getParam('name', '');
-    const avatar =  this.props.navigation.getParam('avatar', '');
+    const parameter = this.props.navigation.getParam('value');
+    const email = parameter.email;
+    const name =  parameter.name;
+    const avatar =  parameter.avatar;
     return (
       <View style={styles.container}>
         <Image></Image>

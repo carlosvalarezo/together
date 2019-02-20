@@ -23,15 +23,19 @@ router.post('/registeruser', (request, response) => {
     const email = request.body.email;
     // cosa(response);
     const userExists = userController.userExists({email});
-
-    userExists.then(result => {
+    
+    const validUser = userExists.then(result => {
         if(!result){
             const userCreated = userController.createUser(request.body);
             if(userCreated){
-                return response.status(200).json(userMessages.userCreatedSucessfully());
-            }            
+                return userCreated;
+            }
         }
         return response.status(404).json(userMessages.userAlreadyExists());
+    }).catch(error => response.status(400).json({error}));
+
+    validUser.then(result => {
+        response.status(200).json({result});
     }).catch(error => response.status(400).json({error}));
 });
 

@@ -17,7 +17,7 @@ const userController = {
 
     },
     logginUser: (email, password) => {
-        return User.findOne({email, password}, {name:1, avatar:1});
+        return User.findOne(email, password);
     }
 }
 

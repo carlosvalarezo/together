@@ -32,10 +32,9 @@ export default class Register extends Component<Props> {
       console.warn('avatar didmount state...', this.state.avatar);
   }
 
-  registerUser(){
-    const {name, email, password, dateOfBirth, nickName, avatar} = this.state;
+  registerUser(avatar){
+    const {name, email, password, dateOfBirth, nickName} = this.state;
     const {navigate} = this.props.navigation;
-    
     fetch('http://'+Keys.endpoints.server+'/api/users/registeruser', {
         method: 'POST',
         headers: {
@@ -48,11 +47,11 @@ export default class Register extends Component<Props> {
             password,
             dateOfBirth,
             nickName,
-            avatar
+            avatar,
         }),
     }).then(value => {
-      console.warn(value);
-      navigate('Profile');
+      console.warn('registrando usuario...', value);
+      // navigate('Profile', {value});
     }).catch(error => console.warn(error));
   }
 
@@ -111,12 +110,8 @@ export default class Register extends Component<Props> {
         <Button title = "Register"
             buttonStyle={RegisterStyles.button}
             onPress={() => {
-              // NativeModules.TogetherApi.registerUser('lorenxo-el-gato-javascript', value => {
-              //   console.warn({value});
-              // });
-              this.registerUser();
+              this.registerUser(avatar);
             }}/>
-
       </View>
     );
   }

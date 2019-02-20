@@ -16,15 +16,12 @@ const UserSchema = new Schema({
     },
     dateOfBirth: {
         type: String,
-        required: true
     },
     nickName: {
         type: String,
-        required: true
     },    
     avatar: {
         type: String,
-        default: '../../togetherData/assets/profile.png'
     },
     dateofRegistration:{
         type: Date,

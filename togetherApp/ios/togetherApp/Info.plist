@@ -4,10 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-  <key>NSCameraUsageDescription</key>
-  <string>${PRODUCT_NAME} Camera Usage</string>
-  <key>NSPhotoLibraryAddUsageDescription</key>
-  <string>${PRODUCT_NAME} library Usage</string>
 	<key>CFBundleDisplayName</key>
 	<string>togetherApp</string>
 	<key>CFBundleExecutable</key>
@@ -33,6 +29,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>${PRODUCT_NAME} Camera Usage</string>
 	<key>NSExceptionDomains</key>
 	<dict>
 		<key>localhost</key>
@@ -43,6 +41,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>${PRODUCT_NAME} library Usage</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
@@ -70,8 +70,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
