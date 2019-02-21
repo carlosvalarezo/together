@@ -77,7 +77,7 @@ class TogetherCameraView: UIView, AVCapturePhotoCaptureDelegate {
   
   
   func createPicturePreview () {
-    imageView.frame = CGRect(x: 355, y: 450, width: 200, height: 100)
+    imageView.frame = CGRect(x: 555, y: 750, width: 100, height: 100)
     self.addSubview(imageView)    
   }
   
