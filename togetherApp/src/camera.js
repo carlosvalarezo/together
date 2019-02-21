@@ -9,6 +9,8 @@ import {View, Text, requireNativeComponent, StyleSheet, NativeModules } from 're
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button } from 'react-native-elements';
 
+import styles from '../styles/camera';
+
 const TogetherCamera = requireNativeComponent("TogetherCameraView");
 
 type Props = {};
@@ -29,18 +31,3 @@ export default class Camera extends Component<Props> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1, alignItems: "stretch"
-    },
-    wrapper: {
-      flex: 1, alignItems: "center", justifyContent: "center"
-    },
-    border: {
-      borderColor: "#eee", borderBottomWidth: 1
-    },
-    button: {
-      fontSize: 50, color: "orange"
-    }
-  });
